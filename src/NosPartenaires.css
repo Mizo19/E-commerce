@@ -1,0 +1,39 @@
+.partenaires-container {
+  background-color: #f8f8f8;
+  padding: 40px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.partenaires-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.logos-scroll {
+  display: flex;
+  gap: 30px;
+  animation: scrollLeft 10s linear infinite;
+  width: max-content;
+}
+
+.logos-scroll img {
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logos-scroll img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

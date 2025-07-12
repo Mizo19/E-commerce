@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "Soins de la peau",
+      "subcategories": [
+        { "id": 101, "title": "Nettoyants visage" },
+        { "id": 102, "title": "Crèmes hydratantes" },
+        { "id": 103, "title": "Anti-âge" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Hygiène & Désinfection",
+      "subcategories": [
+        { "id": 201, "title": "Gels hydroalcooliques" },
+        { "id": 202, "title": "Lingettes désinfectantes" },
+        { "id": 203, "title": "Savons antiseptiques" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Médicaments en vente libre",
+      "subcategories": [
+        { "id": 301, "title": "Douleurs & fièvre" },
+        { "id": 302, "title": "Rhume & grippe" },
+        { "id": 303, "title": "Digestion" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Médicaments sur ordonnance",
+      "subcategories": [
+        { "id": 401, "title": "Cardiovasculaires" },
+        { "id": 402, "title": "Antibiotiques" },
+        { "id": 403, "title": "Antidiabétiques" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Soins bucco-dentaires",
+      "subcategories": [
+        { "id": 501, "title": "Dentifrices" },
+        { "id": 502, "title": "Bains de bouche" },
+        { "id": 503, "title": "Brosses à dents" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Matériel médical",
+      "subcategories": [
+        { "id": 601, "title": "Thermomètres" },
+        { "id": 602, "title": "Tensiomètres" },
+        { "id": 603, "title": "Masques chirurgicaux" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Produits pour bébé",
+      "subcategories": [
+        { "id": 701, "title": "Couches" },
+        { "id": 702, "title": "Lait infantile" },
+        { "id": 703, "title": "Hygiène bébé" }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "subCatId": 1,
+      "title": "Crème hydratante Avène Hydrance",
+      "productCode": "AVN-HYD50",
+      "image": "avene_hydrance.jpeg",
+      "price": 12.99,
+      "sku": "1001",
+      "description": "La crème Avène Hydrance est idéale pour hydrater les peaux sensibles. Texture légère, effet longue durée. Hypoallergénique.",
+      "specs": {
+        "format": "Tube 50ml",
+        "peau": "Sèche à très sèche"
+      },
+      "features": [
+        "Hydratation 24h",
+        "Formule non comédogène",
+        "Apaise les rougeurs"
+      ],
+      "stock": 25
+    },
+    {
+      "id": 2,
+      "subCatId": 2,
+      "title": "Vitamine C 1000mg Effervescente",
+      "productCode": "VITC1000",
+      "image": "vitamine_c.jpg",
+      "price": 8.49,
+      "sku": "1002",
+      "description": "Complément alimentaire à base de Vitamine C pour renforcer les défenses immunitaires. Sans sucre.",
+      "specs": {
+        "format": "Tube de 20 comprimés",
+        "goût": "Orange"
+      },
+      "features": [
+        "Renforce le système immunitaire",
+        "Réduction de la fatigue",
+        "Goût agréable"
+      ],
+      "stock": 50
+    },
+    {
+      "id": 3,
+      "subCatId": 3,
+      "title": "Gel hydroalcoolique Bactigel",
+      "productCode": "BACTGEL500",
+      "image": "gel_bactigel.png",
+      "price": 4.99,
+      "sku": "1003",
+      "description": "Gel hydroalcoolique sans rinçage pour l'antisepsie des mains. Efficace contre les virus et bactéries.",
+      "specs": {
+        "format": "Flacon pompe 500ml",
+        "utilisation": "Mains"
+      },
+      "features": [
+        "Elimine 99.9% des bactéries",
+        "Sèche rapidement",
+        "Sans parfum"
+      ],
+      "stock": 120
+    },
+    {
+      "id": 4,
+      "subCatId": 1,
+      "title": "Crème solaire La Roche-Posay SPF50+",
+      "productCode": "LRP-SPF50",
+      "image": "roche_posat.jpeg",
+      "price": 15.90,
+      "sku": "1004",
+      "description": "Protection solaire très haute efficacité pour peaux sensibles. Résistante à l’eau. Sans parabènes.",
+      "specs": {
+        "format": "Tube 50ml",
+        "indice": "SPF 50+"
+      },
+      "features": [
+        "Protège contre les UVA/UVB",
+        "Testée dermatologiquement",
+        "Fini non gras"
+      ],
+      "stock": 35
+    },
+    {
+      "id": 5,
+      "subCatId": 2,
+      "title": "Magnésium Marin B6",
+      "productCode": "MAGMARIN-B6",
+      "image": "Magnésium.jpg",
+      "price": 10.90,
+      "sku": "1005",
+      "description": "Réduit la fatigue et améliore la fonction musculaire. Idéal en période de stress ou de fatigue.",
+      "specs": {
+        "format": "Boîte de 60 gélules",
+        "prise": "1 à 2 gélules/jour"
+      },
+      "features": [
+        "Origine naturelle",
+        "Sans gluten",
+        "Riche en vitamines B"
+      ],
+      "stock": 45
+    }
+  ]
+}

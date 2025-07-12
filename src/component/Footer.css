@@ -1,0 +1,70 @@
+.footer {
+  background-color: #00245a;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1450px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+  color:white ;
+}
+
+.footer-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color:white ;
+}
+
+.footer-section h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.footer-icon {
+  display: inline-block;
+  color: white;
+  margin-top: 10px;
+  transition: color 0.3s;
+}
+
+.footer-icon:hover {
+  color: #e1306c; /* Instagram pink */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
