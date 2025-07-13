@@ -1,5 +1,5 @@
 // fetcher.js
-const BASE_URL = "http://localhost:3003";
+const BASE_URL = "https://e-commerce-13-xy5k.onrender.com";
 
 export const fetcher = async (url) => {
   let responseObject = { errorMessage: '', data: [] };
