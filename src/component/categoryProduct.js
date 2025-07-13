@@ -8,9 +8,7 @@ export const CategoryProduct = ({ id ,title, image, specs, features, price, stoc
   return (
   
     <article className="category-product-container">
-     <div className="category-product-title">
-  <Link to={`/products/${id}`}>{title}</Link>
-</div>
+     
 
       <div className="category-product-grid">
         {/* Column 1: Image */}
@@ -18,28 +16,10 @@ export const CategoryProduct = ({ id ,title, image, specs, features, price, stoc
           <img src={`./assets/${image}`} alt={title} />
         </figure>
 
-        {/* Column 2: Specs & Features */}
-        <div>
-          <div className="category-product-info-dimension">
-            <h3>Dimensions</h3>
-            <label>{specs.dimension}</label>
-          </div>
-          {specs.capacity && (
-            <div className="category-product-info-capacity">
-              <h3>Capacity</h3>
-              <label>{specs.capacity}</label>
-            </div>
-          )}
-          <div className="category-product-info-features">
-            <h3>Features</h3>
-            <ul>
-              {features?.map((f, i) => (
-                <li key={i}>{f}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
+        
+            <div className="category-product-title">
+  <Link to={`/products/${id}`}>{title}</Link>
+</div>
         {/* Column 3: Price & Actions */}
         <aside className="category-product-finance">
           <div className="category-product-finance-price" > {price} DHS </div>
@@ -49,7 +29,7 @@ export const CategoryProduct = ({ id ,title, image, specs, features, price, stoc
           </div>
           <div className="category-product-action">
             <button onClick={()=> navigate(`/products/${id}`)}>View Product</button>
-            <button>Add to basket</button>
+            <button>🛒 J'achete </button>
 
           </div>
         </aside>

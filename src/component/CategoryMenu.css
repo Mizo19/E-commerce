@@ -22,7 +22,7 @@
 .dropdown-title {
   padding: 0.5rem 1rem;
   font-weight: bold;
-  color: #0bb0da;
+  color: #ffffff;
   cursor: pointer;
   transition: color var(--dropdown-transition);
 }

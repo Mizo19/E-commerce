@@ -11,7 +11,7 @@ body {
 }
 
 a {
-    color: #0661ca;
+    color: #00245a;
     text-decoration: none;
 }
 
@@ -79,23 +79,58 @@ section {
   height: auto;
 }
 nav.category-menu {
+  padding: 16px;
+  background: #00245a;
+  color: rgb(9, 129, 99);
+  font-family: sans-serif;
   display: flex;
-  flex-direction: row;         /* horizontal layout */
-  flex-wrap: wrap;             /* wrap to next line if needed */
-  background: #00245a;         /* fix typo: remove extra # */
-  padding: 20px;
-  gap: 12px;                   /* spacing between categories */
-  overflow-x: auto;            /* horizontal scroll if needed */
-  font-family: 'Segoe UI', sans-serif;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  background: #004080;
+  padding: 12px;
+  border-radius: 8px;
+  width: 250px;
+}
+
+.category-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.subcategory-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f0c040;
+}
+
+.subcategory-item {
+  margin-bottom: 6px;
+  cursor: pointer;
+  background-color: #f0c040;
+}
+
+@media (max-width: 768px) {
+  nav.category-menu {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .category-card {
+    width: 100%;
+  }
 }
  h2 {
-        color: #00245a;
+        color: #dfe7ee;
     }
 .category-item {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 20px;
-  background-color: #004080;
+  background-color: #00245a;
   color: white;
   font-size: bold;
   cursor: pointer;
@@ -126,7 +161,7 @@ nav.category-menu {
    text-decoration: underline;
 }
 .category-item:hover {
-  background-color: #0066cc;
+  background-color: #fcec14ef;
 }
 /* Main Content */
 main {
@@ -175,7 +210,7 @@ footer a {
 /* Slider container */
 .slider-container {
   max-width: 40%;
-   margin: 0 auto; 
+  margin: 0 auto;
 }
 
 .slider-container img {
@@ -183,6 +218,18 @@ footer a {
   height: 350px;
   object-fit: cover;
   border-radius: 15px;
+}
+
+/* 🔧 Mobile view adjustments */
+@media (max-width: 768px) {
+  .slider-container {
+    max-width: 90%;
+  }
+
+  .slider-container img {
+    height: 200px; /* reduce height on mobile */
+    border-radius: 10px;
+  }
 }
 /* 3-column grid layout */
 .category-product-grid {
@@ -195,9 +242,9 @@ footer a {
 /* Title */
 .category-product-title {
     grid-column: 1 / span 3;
-    color: #004cbe;
+    color: #fab905;
     font-weight: bold;
-    font-size: 1.7em;
+    font-size: 1.2em;
     padding-left: 10px;
     margin-bottom: 15px;
 }
@@ -240,8 +287,8 @@ footer a {
 
 /* Price / Stock / Actions */
 .category-product-finance-price {
-    color: #00245a;
-    font-size: 1.8em;
+    color: #d69f06;
+    font-size: 1.2em;
     font-weight: bold;
     padding-top: 10px;
 }
@@ -266,6 +313,7 @@ footer a {
     flex-direction: column;
     margin-top: 15px;
     gap: 10px;
+    background-color: bisque;
 }
 
 .category-product-action button {

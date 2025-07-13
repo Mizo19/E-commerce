@@ -107,18 +107,19 @@ useEffect(() => {
   
 </header>
 <br/>
-<nav>
- <div  >
+<nav className="category-menu">
+
 
   <CategoryMenu
     categories={categories.data}
     onCategoryClick={handleCategoryClick}
   />
 
-</div>
+
 <br/>
-<br/>
+
 </nav>
+<br/>
     {/* Advertising Slider */}
       <div className="slider-container">
         <Slider {...sliderSettings}>
