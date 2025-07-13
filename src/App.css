@@ -1,77 +1,67 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-body, html {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f9fa;
-  color: #333;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f9fa;
+    color: #333;
 }
 
 a {
-  color: #0661ca;
-  text-decoration: none;
+    color: #0661ca;
+    text-decoration: none;
 }
 
-/* ---------------------- HEADER ---------------------- */
+/* Header */
 header {
-  width: 100%;
-  background-color: #00245a;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  color: white;
-  font-size: 1.5em;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-header > * {
-  margin: 5px 10px;
+    background-color: #00245a;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 30px;
+    color: #061a8a;
+    display: grid;
+    grid-template-columns: 0.1fr 1fr 0.1fr;
+    align-items: center;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
 }
 
 header a {
-  color: #ffffff;
+    color: #0423af;
 }
 
-/* Header sections */
-#headerHomeIcon,
-#headerCartIcon {
-  justify-self: center;
-}
-
-#headerTitle {
-  font-weight: bold;
-  font-size: 1.8em;
-  text-align: center;
-  flex: 1;
-}
-
-/* Search bar in header */
 #search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #search input {
-  margin-left: 10px;
-  height: 35px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  padding: 0 10px;
-  font-size: 16px;
+    margin-left: 10px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    font-size: 16px;
 }
 
-/* ---------------------- LAYOUT CONTAINER ---------------------- */
+#headerHomeIcon,
+#headerCartIcon {
+    justify-self: center;
+}
+
+#headerTitle {
+    justify-self: center;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+/* Layout Container */
 section {
-  display: flex;
-  margin-top: 20px;
+    display: flex;
+    margin-top: 20px;
 }
 
 .payment-method {
@@ -88,85 +78,104 @@ section {
   width: 50px;
   height: auto;
 }
-
-/* ---------------------- CATEGORY MENU ---------------------- */
 nav.category-menu {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background: #00245a;
+  flex-direction: row;         /* horizontal layout */
+  flex-wrap: wrap;             /* wrap to next line if needed */
+  background: #00245a;         /* fix typo: remove extra # */
   padding: 20px;
-  gap: 12px;
-  overflow-x: auto;
+  gap: 12px;                   /* spacing between categories */
+  overflow-x: auto;            /* horizontal scroll if needed */
   font-family: 'Segoe UI', sans-serif;
 }
-
+ h2 {
+        color: #00245a;
+    }
 .category-item {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 20px;
   background-color: #004080;
   color: white;
-  font-weight: bold;
+  font-size: bold;
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
   transition: background-color 0.3s ease;
 }
-
-.category-item:hover {
-  background-color: #0066cc;
-}
-
 .category-text {
   margin: 0 12px;
   font-size: 18px;
   color: #4221b9;
-  font-weight: bold;
+ font-weight: bold;
   cursor: pointer;
   text-decoration: none;
   transition: border-bottom 0.2s ease;
   border-bottom: 2px solid transparent;
+  
 }
-
-.category-text:hover {
-  color: #85caaa;
-  text-decoration: underline;
-}
-
-h2 {
-  color: #00245a;
-}
-
-/* ---------------------- PRODUCT LIST ---------------------- */
 .product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 per row */
   gap: 20px;
   padding: 20px;
 }
+.category-text:hover {
+   color: #85caaa;
+   font-weight: bold;
+   text-decoration: underline;
+}
+.category-item:hover {
+  background-color: #0066cc;
+}
+/* Main Content */
+main {
+    flex: 0.8;
+    padding: 20px;
+    min-height: 1600px;
+}
 
+/* Footer */
+footer {
+    background-color: #00245a;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+footer a {
+    color: #00245a;
+}
+.category-item {
+  white-space: nowrap; /* prevent wrapping inside button */
+  /* other styling from before */
+}
+.category-item:hover {
+  background-color: #0066cc;
+}
+
+/* ---------- PRODUCT CARD STYLE ---------- */
 .category-label {
   font-size: 16px;
   font-weight: 600;
   color: black;
   font-family: 'Segoe UI', sans-serif;
 }
-
 .category-product-container {
-  padding: 20px;
-  margin-bottom: 30px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.05);
-  max-width: 500px;
-  margin: 20px auto;
-  border-bottom: 1px solid #f1f1f3;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #f1f1f3;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.05);
+     max-width: 500px;
+    margin: 20px auto
 }
-
+/* Slider container */
 .slider-container {
   max-width: 40%;
-  margin: 0 auto;
+   margin: 0 auto; 
 }
 
 .slider-container img {
@@ -175,57 +184,144 @@ h2 {
   object-fit: cover;
   border-radius: 15px;
 }
-
+/* 3-column grid layout */
 .category-product-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
+     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; 
 }
 
+/* Title */
 .category-product-title {
-  color: #004cbe;
-  font-weight: bold;
-  font-size: 1.7em;
-  padding-left: 10px;
-  margin-bottom: 15px;
+    grid-column: 1 / span 3;
+    color: #004cbe;
+    font-weight: bold;
+    font-size: 1.7em;
+    padding-left: 10px;
+    margin-bottom: 15px;
 }
 
+/* Image */
 .category-product-image-container img {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  object-fit: contain;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 8px;
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
 }
 
+/* Product Info */
 .category-product-info-dimension,
 .category-product-info-capacity,
 .category-product-info-features {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .category-product-info-dimension h3,
 .category-product-info-capacity h3,
 .category-product-info-features h3 {
-  color: #00245a;
-  font-size: 1em;
-  font-weight: bold;
-  padding-bottom: 5px;
+    color: #00245a;
+    font-size: 1em;
+    font-weight: bold;
+    padding-bottom: 5px;
 }
 
 .category-product-info-features li {
-  padding-top: 5px;
-  font-size: 14px;
-  color: #555;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #555;
 }
 
+/* Price / Stock / Actions */
 .category-product-finance-price {
-  color: #00245a;
-  font-size:
+    color: #00245a;
+    font-size: 1.8em;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.category-product-info-stock {
+    background-color: #bee5f7;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.category-product-info-stock label {
+    font-size: 14px;
+}
+
+.category-product-action {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.category-product-action button {
+    width: 180px;
+    height: 35px;
+    border-radius: 8px;
+    background-color: #b3f0ff;
+    border: solid 1px #007b83;
+    color: #004d4d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category-product-action button:hover {
+    background-color: #007b83;
+    color: white;
+}
+
+.category-product-action button:last-child {
+    background-color: #a0dad6;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+    .category-product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-product-title {
+        grid-column: 1 / span 1;
+    }
+
+    .category-product-image-container img {
+        max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 10px;
+  }
+
+  #headerTitle {
+    font-size: 1.4em;
+  }
+
+  #search input {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  #headerHomeIcon,
+  #headerCartIcon {
+    order: -1; /* move icons to the top */
+  }
 }
