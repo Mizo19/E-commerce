@@ -22,13 +22,13 @@
 .dropdown-title {
   padding: 0.5rem 1rem;
   font-weight: bold;
-  color: #ffffff;
+  color: black;
   cursor: pointer;
   transition: color var(--dropdown-transition);
 }
 
 .dropdown-title:hover {
-  color: #310c0c;
+  color: #1377b9;
 }
 
 /* Hide submenu by default and use opacity + visibility for smooth fade */

@@ -11,13 +11,14 @@ body {
 }
 
 a {
-    color: #00245a;
+    color: black;
     text-decoration: none;
+   font-family: "Times New Roman", Times, serif; 
 }
 
 /* Header */
 header {
-    background-color: #00245a;
+    background-color: white;
     padding: 25px 20px;
     text-align: center;
     font-size: 30px;
@@ -29,7 +30,8 @@ header {
 }
 
 header a {
-    color: #0423af;
+    color: white;
+    font: optional;
 }
 
 #search {
@@ -98,6 +100,7 @@ nav.category-menu {
 .category-title {
   font-weight: bold;
   margin-bottom: 8px;
+  color: black;
 }
 
 .subcategory-list {
@@ -124,7 +127,7 @@ nav.category-menu {
   }
 }
  h2 {
-        color: #dfe7ee;
+        color: black;
     }
 .category-item {
   display: inline-block;
@@ -172,7 +175,7 @@ main {
 
 /* Footer */
 footer {
-    background-color: #00245a;
+    background-color: #5a92e6;
     padding: 20px;
     text-align: center;
     color: white;
@@ -180,7 +183,7 @@ footer {
 }
 
 footer a {
-    color: #00245a;
+    color: #5a92e6;
 }
 .category-item {
   white-space: nowrap; /* prevent wrapping inside button */
@@ -198,19 +201,42 @@ footer a {
   font-family: 'Segoe UI', sans-serif;
 }
 .category-product-container {
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 15px;
+    margin-bottom: 25px;
     border-bottom: 1px solid #f1f1f3;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 1px 6px rgba(0,0,0,0.05);
-     max-width: 500px;
+     max-width: 450px;
     margin: 20px auto
 }
-/* Slider container */
+.ads-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  flex-wrap: nowrap;
+}
+
 .slider-container {
+  flex: 1;
   max-width: 40%;
-  margin: 0 auto;
+}
+
+.side-image {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.side-image img {
+  width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .slider-container img {
@@ -222,20 +248,34 @@ footer a {
 
 /* 🔧 Mobile view adjustments */
 @media (max-width: 768px) {
+  .ads-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+  }
+
   .slider-container {
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
   }
 
   .slider-container img {
-    height: 200px; /* reduce height on mobile */
+    height: 200px;
     border-radius: 10px;
+  }
+
+  .side-image img {
+    width: 90%;
+    max-width: 250px;
+    border-radius: 6px;
   }
 }
 /* 3-column grid layout */
 .category-product-grid {
      display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     align-items: center; 
 }
 
@@ -287,21 +327,21 @@ footer a {
 
 /* Price / Stock / Actions */
 .category-product-finance-price {
-    color: #d69f06;
-    font-size: 1.2em;
+    color: #003479;
+    font-size: 1.4em;
     font-weight: bold;
-    padding-top: 10px;
+    
 }
 
 .category-product-info-stock {
-    background-color: #bee5f7;
+    background-color: white;
     border-radius: 5px;
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 10px;
-    margin-top: 20px;
+    gap: 3px;
+    padding: 7px;
+    margin-top: 10px;
 }
 
 .category-product-info-stock label {
@@ -311,30 +351,30 @@ footer a {
 .category-product-action {
     display: flex;
     flex-direction: column;
-    margin-top: 15px;
-    gap: 10px;
-    background-color: bisque;
+    margin-top: 10px;
+    gap: 8px;
+    background-color: white;
 }
 
 .category-product-action button {
     width: 180px;
     height: 35px;
     border-radius: 8px;
-    background-color: #b3f0ff;
-    border: solid 1px #007b83;
-    color: #004d4d;
+    background-color: white;
+    border: solid 1px #308300;
+    color: black;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .category-product-action button:hover {
-    background-color: #007b83;
-    color: white;
+    background-color: #168300;
+    color: black;
 }
 
 .category-product-action button:last-child {
-    background-color: #a0dad6;
+    background-color: #168300;;
 }
 
 /* Responsive Layout */

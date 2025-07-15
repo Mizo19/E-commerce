@@ -11,7 +11,7 @@ import { BsInstagram } from 'react-icons/bs';
 import { BsTiktok } from 'react-icons/bs';
 import Footer from './component/Footer';
 import CategoryMenu from './component/categoryMenu'
-
+import Guarantees from './component/Guarantees';
 import './NosPartenaires.css'
 
 
@@ -77,16 +77,19 @@ useEffect(() => {
    <div>
   <img src="/assets/transparent.png" alt="Logo"  width="250" height="auto"/>  
 </div>
- <p style={{ fontSize: '25px', fontWeight :'bold'   }}>
+ <p style={{ fontSize: '25px', fontWeight :'bold'  , color :'green' }}>
   Votre destination santé et bien-être : produits dermatologiques, soins naturels, hygiène <br />et compléments alimentaires.<br />
-  <span style={{ fontStyle: 'italic', fontSize: '18px', color: '#a0e7ff' }}>
+  <span style={{ fontStyle:'Carmen sans', fontSize: '18px', color: 'black' }}>
     Livraison gratuite pour toute commande sur Casablanca   <br />
   🎵 mail  : @parapharmacie_awabain@gmail.com 
      </span>
   
 </p>
-<div style={{alignitem :" alignItems: 'left'"}}>
- <  FaWhatsappSquare style={{ marginRight: '8px', fontSize: '48px' ,color :'white' }}/>   
+<div style={{alignitem :" alignItems: ' left'"}}>
+<br/>
+<br/>
+
+ <  FaWhatsappSquare style={{ marginRight: '8px', fontSize: '25px' ,color :'black' }}/>   
    <a 
   href="https://www.instagram.com/para_essentielle/" 
   target="_blank" 
@@ -96,18 +99,18 @@ useEffect(() => {
   <BsInstagram 
     style={{ 
       marginRight: '8px', 
-      fontSize: '48px', 
-      color: 'white', 
+      fontSize: '25px', 
+      color: 'black', 
       cursor: 'pointer' 
     }} 
   />
 </a>
-        <BsTiktok style={{ marginRight: '8px', fontSize: '48px' ,color :'white', }}/> 
+        <BsTiktok style={{ marginRight: '8px', fontSize: '25px' ,color :'black', }}/> 
  </div>
   
 </header>
 <br/>
-<nav className="category-menu">
+<nav >
 
 
   <CategoryMenu
@@ -118,18 +121,33 @@ useEffect(() => {
 
 <br/>
 
+
 </nav>
 <br/>
-    {/* Advertising Slider */}
-      <div className="slider-container">
-        <Slider {...sliderSettings}>
-          {images.map((src, idx) => (
-            <div key={idx}>
-              <img src={src} alt={`pub-${idx}`} />
-            </div>
-          ))}
-        </Slider>
-      </div>
+   
+ 
+  <div className="ads-layout">
+ 
+  <div className="slider-container">
+    <Slider {...sliderSettings}>
+      {images.map((src, idx) => (
+        <div key={idx}>
+          <img src={src} alt={`pub-${idx}`} />
+        </div>
+      ))}
+    </Slider>
+  </div>
+<p>&nbsp;&nbsp;&nbsp;</p>
+  <div className="side-image">
+    <img src="/assets/ads1.jpg" alt="right ad" /> 
+
+
+  </div>
+</div>
+      <div>
+  <Guarantees />
+</div>
+<br/>
       <section>
       
      

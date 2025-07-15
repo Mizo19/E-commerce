@@ -1,0 +1,43 @@
+.guarantees {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px; /* 🔽 Avant c’était 20px */
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px; /* taille fixe pour uniformité */
+  text-align: center;
+}
+
+.item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.item h4 {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #1b1b62;
+}
+
+.item p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+.item span {
+  width: 20px;
+  height: 3px;
+  background: #00c67b;
+  border-radius: 4px;
+  margin-top: 5px;
+}

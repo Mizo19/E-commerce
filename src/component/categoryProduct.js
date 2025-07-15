@@ -22,7 +22,7 @@ export const CategoryProduct = ({ id ,title, image, specs, features, price, stoc
 </div>
         {/* Column 3: Price & Actions */}
         <aside className="category-product-finance">
-          <div className="category-product-finance-price" > {price} DHS </div>
+          <div className="category-product-finance-price" > &nbsp;&nbsp;&nbsp;{price} DHS </div>
           <div className="category-product-info-stock">
             <label>Disponibilité stock: {stock}</label>
             <label>Livraison gratuit</label>

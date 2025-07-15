@@ -1,5 +1,5 @@
 .footer {
-  background-color: #00245a;
+  background-color: white;
   color: #fff;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
@@ -17,19 +17,21 @@
   flex: 1;
   min-width: 200px;
   margin-bottom: 20px;
-  color:white ;
+  color:black ;
+  font-weight: bold;
 }
 
 .footer-title {
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 10px;
-  color:white ;
+  color:black ;
 }
 
 .footer-section h3 {
   font-size: 19px;
   margin-bottom: 10px;
+  color : black;
 }
 
 .footer-section ul {
@@ -42,7 +44,7 @@
 }
 
 .footer-section a {
-  color: #ccc;
+  color: black;
   text-decoration: none;
 }
 
