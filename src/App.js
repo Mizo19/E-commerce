@@ -13,10 +13,13 @@ import Footer from './component/Footer';
 import CategoryMenu from './component/categoryMenu'
 import Guarantees from './component/Guarantees';
 import './NosPartenaires.css'
+import Sidebar from './component/sidebar';
+import { Menu } from "lucide-react";
 
 
 
 const images = [
+
   "./assets/bnsar.png",
   "./assets/slider-eucerin.jpg",
   "./assets/1.png",
@@ -25,6 +28,8 @@ const images = [
 function App() {
   const [categories, setCategories] = useState({errorMessage:'' , data: [] });
   const [products, setProducts] = useState({errorMessage:'' , data: [] });
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
 
    const sliderSettings = {
     dots: true,
@@ -73,10 +78,34 @@ useEffect(() => {
 
   return (
     <React.Fragment>
-   <header style={{ color: 'white', padding: '20px', textAlign: 'center' }}>
-   <div>
-  <img src="/assets/transparent.png" alt="Logo"  width="250" height="auto"/>  
-</div>
+     <Sidebar
+  isOpen={sidebarOpen}
+  toggle={toggleSidebar}
+  categories={categories.data || []} // ensures it's always an array
+  onCategoryClick={(id) => {
+    handleCategoryClick(id);
+    toggleSidebar(); // optional: close sidebar after click
+  }}
+/>
+   <header style={{ color: 'white', padding: '20px', textAlign: 'center', position: 'relative' }}>
+    <button 
+        onClick={toggleSidebar}
+        style={{ 
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer'
+        }}
+      >
+        <Menu size={30} color="black" />
+      </button>
+
+      <div>
+        <img src="/assets/transparent.png" alt="Logo"  width="250" height="auto"/>  
+      </div>
+ 
  <p style={{ fontSize: '25px', fontWeight :'bold'  , color :'green' }}>
   Votre destination santé et bien-être : produits dermatologiques, soins naturels, hygiène <br />et compléments alimentaires.<br />
   <span style={{ fontStyle:'Carmen sans', fontSize: '18px', color: 'black' }}>
