@@ -67,7 +67,7 @@
   "products": [
     {
       "id": 1,
-      "subCatId": 1,
+      "subCatId": 101,
       "title": "Crème hydratante Avène Hydrance",
       "productCode": "AVN-HYD50",
       "image": "avene_hydrance.jpeg",
@@ -88,7 +88,7 @@
     },
     {
       "id": 2,
-      "subCatId": 2,
+      "subCatId": 101,
       "title": "Vitamine C 1000mg Effervescente",
       "productCode": "VITC1000",
       "image": "vitamine_c.jpg",
