@@ -1,17 +1,24 @@
-/* Dropdown.css */
-
 :root {
-  --dropdown-bg: #fff;
-  --dropdown-border: #ddd;
-  --dropdown-hover-bg: #e6f7ff;
-  --dropdown-shadow: rgba(0, 0, 0, 0.1);
-  --dropdown-transition: 0.25s ease-in-out;
+  --dropdown-bg: #ffffff;
+  --dropdown-border: #dfe6f1;
+  --dropdown-hover-bg: #f0f4fa;
+  --dropdown-hover-border: #007bff;
+  --dropdown-shadow: rgba(30, 42, 64, 0.1);
+  --dropdown-transition: 0.2s ease;
+  --dropdown-accent: #007bff;
+  --dropdown-text: #333;
+  --dropdown-hover-text: #007bff;
+  --dropdown-font: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .dropdown-container {
   display: flex;
-  gap: 1.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  gap: 2rem;
+  font-family: var(--dropdown-font);
+  background-color: #f8f9fc;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
 }
 
 .dropdown-item {
@@ -20,37 +27,37 @@
 }
 
 .dropdown-title {
-  padding: 0.5rem 1rem;
-  font-weight: bold;
-  color: black;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--dropdown-accent);
+  border-radius: 6px;
   cursor: pointer;
-  transition: color var(--dropdown-transition);
+  transition: background-color var(--dropdown-transition), color var(--dropdown-transition);
 }
 
 .dropdown-title:hover {
-  color: #1377b9;
+  background-color: var(--dropdown-hover-bg);
+  color: var(--dropdown-hover-text);
 }
 
-/* Hide submenu by default and use opacity + visibility for smooth fade */
 .dropdown-submenu {
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
   background-color: var(--dropdown-bg);
   border: 1px solid var(--dropdown-border);
-  box-shadow: 0 8px 16px var(--dropdown-shadow);
+  box-shadow: 0 12px 24px var(--dropdown-shadow);
   padding: 0.5rem 0;
-  border-radius: 4px;
-  min-width: 180px;
-
+  border-radius: 10px;
+  min-width: 200px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
+  transform: translateY(12px);
   transition: opacity var(--dropdown-transition), transform var(--dropdown-transition), visibility var(--dropdown-transition);
   z-index: 1000;
 }
 
-/* Show submenu on hover using pointer-events + opacity */
 .dropdown-item:hover > .dropdown-submenu,
 .dropdown-submenu:hover {
   opacity: 1;
@@ -60,17 +67,17 @@
 }
 
 .submenu-item {
-  padding: 0.5rem 1.25rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--dropdown-text);
   cursor: pointer;
-  white-space: nowrap;
   transition: background-color var(--dropdown-transition), color var(--dropdown-transition);
-  color: #444;
 }
 
 .submenu-item:hover {
   background-color: var(--dropdown-hover-bg);
-  color: #107bec;
-  border-left: 3px solid #006bdd;
+  color: var(--dropdown-hover-text);
+  border-left: 4px solid var(--dropdown-hover-border);
 }
 
 /* Responsive tweak: stack dropdown items vertically on small screens */
@@ -78,5 +85,21 @@
   .dropdown-container {
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem;
+  }
+
+  .dropdown-submenu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .submenu-item {
+    border-left: none;
   }
 }

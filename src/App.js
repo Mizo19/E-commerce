@@ -20,9 +20,9 @@ import { Menu } from "lucide-react";
 
 const images = [
 
-  "./assets/bnsar.png",
+  "./assets/loyality.jpg",
   "./assets/slider-eucerin.jpg",
-  "./assets/1.png",
+  "./assets/bnsar.png",
 ];
 
 function App() {
@@ -102,18 +102,35 @@ useEffect(() => {
         <Menu size={30} color="black" />
       </button>
 
-      <div>
-        <img src="/assets/transparent.png" alt="Logo"  width="250" height="auto"/>  
-      </div>
- 
- <p style={{ fontSize: '25px', fontWeight :'bold'  , color :'green' }}>
-  Votre destination santé et bien-être : produits dermatologiques, soins naturels, hygiène <br />et compléments alimentaires.<br />
-  <span style={{ fontStyle:'Carmen sans', fontSize: '18px', color: 'black' }}>
-    Livraison gratuite pour toute commande sur Casablanca   <br />
-  🎵 mail  : @parapharmacie_awabain@gmail.com 
-     </span>
-  
+   <div>
+  <img 
+    src="/assets/transparent.png" 
+    alt="Logo"  
+    style={{ marginLeft: '60px' }} // add enough margin to avoid overlap
+    width="250" 
+    height="auto"
+  />  
+</div>
+ <p style={{ 
+  fontSize: '25px', 
+  fontFamily: 'Poppins, sans-serif', 
+  fontWeight: 'bold', 
+  color: 'green',
+  lineHeight: '1.6'
+}}>
+  Votre destination santé et bien-être : produits dermatologiques, soins naturels, hygiène <br />
+  et compléments alimentaires.<br />
+  <span style={{ 
+    fontFamily: 'Poppins, sans-serif', 
+    fontSize: '18px', 
+    color: 'black', 
+    fontWeight: 'normal'
+  }}>
+    Livraison gratuite pour toute commande sur Casablanca <br />
+    🎵 mail : @parapharmacie_awabain@gmail.com
+  </span>
 </p>
+
 <div style={{alignitem :" alignItems: ' left'"}}>
 <br/>
 <br/>

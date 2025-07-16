@@ -1,4 +1,3 @@
-// src/component/Sidebar.js
 import React, { useState } from "react";
 import { Home, ShoppingCart, Info } from "lucide-react";
 import './sidebar.css';
@@ -8,55 +7,52 @@ const Sidebar = ({ isOpen, toggle, categories, onCategoryClick }) => {
   const [expandedCategoryId, setExpandedCategoryId] = useState(null);
 
   const toggleCategory = (id) => {
-    setExpandedCategoryId(expandedCategoryId === id ? null : id);
+    setExpandedCategoryId(prev => prev === id ? null : id);
   };
 
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <button className="close-btn" onClick={toggle}>×</button>
 
-      <ul className="sidebar-links">
-        <li><Home size={18} /> Home</li>
+     <ul className="sidebar-links">
+  {/* Main items */}
+  <li className="nav-item main">
+    <Home size={18} />
+    <span className="nav-text">Home</span>
+  </li>
 
+  <li className="nav-item main" onClick={() => setShowCategories(!showCategories)}>
+    <ShoppingCart size={18} />
+    <span className="nav-text">Produits</span>
+  </li>
+
+  {/* Categories */}
+  {showCategories && categories.map((cat) => (
+    <React.Fragment key={cat.id}>
+      <li
+        className="nav-item category"
+        onClick={() => toggleCategory(cat.id)}
+      >
+        <span className="nav-text">{cat.title}</span>
+      </li>
+
+      {expandedCategoryId === cat.id && cat.subcategories?.map((sub) => (
         <li
-          onClick={() => setShowCategories(!showCategories)}
-          style={{ cursor: "pointer" }}
+          key={sub.id}
+          className="nav-item subcategory"
+          onClick={() => onCategoryClick(sub.id)}
         >
-          <ShoppingCart size={18} />
-          <span style={{ marginLeft: "8px" }}>Produits</span>
+          <span className="nav-text">🛒{sub.title}</span>
         </li>
+      ))}
+    </React.Fragment>
+  ))}
 
-        {showCategories && (
-          <ul className="category-list">
-            {categories.map((cat) => (
-              <li key={cat.id} style={{ marginTop: '4px' }}>
-                <div
-                  onClick={() => toggleCategory(cat.id)}
-                  style={{ cursor: 'pointer', fontWeight: 'bold' }}
-                >
-                  {cat.title}
-                </div>
-
-                {expandedCategoryId === cat.id && cat.subcategories && (
-                  <ul className="subcategory-list" style={{ paddingLeft: '15px' }}>
-                    {cat.subcategories.map((sub) => (
-                      <li
-                        key={sub.id}
-                        onClick={() => onCategoryClick(sub.id)}
-                        style={{ cursor: 'pointer', marginTop: '4px', fontSize: '14px' }}
-                      >
-                        - {sub.title}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <li><Info size={18} /> À propos</li>
-      </ul>
+  <li className="nav-item main">
+    <Info size={18} />
+    <span className="nav-text">À propos</span>
+  </li>
+</ul>
     </div>
   );
 };
