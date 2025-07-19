@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../fetcher';
-
+import Header from './Header';
 
 
 
@@ -16,6 +16,9 @@ const [product , setProduct]=React.useState( { errorMessage: '' , data :{} });
    fetchData();
    }  , [productId] )
   return (
+
+    <>   
+    <Header/>
    <article className="category-product-container">
      <div className="category-product-title">
 {product.data.title}
@@ -61,7 +64,7 @@ const [product , setProduct]=React.useState( { errorMessage: '' , data :{} });
       </div>
        <div> {product.data?.description}</div>
     </article> 
-
+</>
   )
 }
 

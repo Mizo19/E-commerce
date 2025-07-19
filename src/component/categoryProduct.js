@@ -1,40 +1,61 @@
-import React from 'react'
-import {Link , useNavigate} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './categoryProduct.css';
+import styled from 'styled-components';
+import { CartContext } from './cartContext';
 
 
+const ProductTitle = styled.div`
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 6px;
+`;
 
-export const CategoryProduct = ({ id ,title, image, specs, features, price, stock }) => {
-    const navigate =useNavigate();
+export const CategoryProduct = ({ id, title, image, price, stock, oldprice }) => {
+  const navigate = useNavigate();
+  const { addProduct } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    if (typeof addProduct === 'function') {
+      addProduct({ id, title, price, image });
+      alert(`🛒 ${title} ajouté au panier !`);
+      debugger ;
+    } else {
+      console.error('addProduct n’est pas une fonction valide.');
+    }
+  };
+
   return (
+    <>
   
-    <article className="category-product-container">
-     
+    <div className="product-card">
+      <div className="product-image-wrapper">
+        <img src={`./assets/${image}`} alt={title} className="product-image" />
 
-      <div className="category-product-grid">
-        {/* Column 1: Image */}
-        <figure className="category-product-image-container">
-          <img src={`./assets/${image}`} alt={title} />
-        </figure>
+        <div className="discount-badge">-34%</div>
+        <div className="new-badge">NOUVEAU</div>
+        <div className="promo-badge">PROMO</div>
 
-        
-            <div className="category-product-title">
-  <Link to={`/products/${id}`}>{title}</Link>
-</div>
-        {/* Column 3: Price & Actions */}
-        <aside className="category-product-finance">
-          <div className="category-product-finance-price" > &nbsp;&nbsp;&nbsp;{price} DHS </div>
-          <div className="category-product-info-stock">
-            <label>Disponibilité stock: {stock}</label>
-            <label>Livraison gratuit</label>
-          </div>
-          <div className="category-product-action">
-            <button onClick={()=> navigate(`/products/${id}`)}>View Product</button>
-            <button>🛒 J'achete </button>
+        <button className="add-to-cart-btn1" onClick={handleAddToCart}>
+          🛒 AJOUTER AU PANIER
+        </button>
 
-          </div>
-        </aside>
+        <button className="add-to-cart-btn" onClick={() => navigate(`/products/${id}`)}>
+          Voir Produit
+        </button>
       </div>
-    </article>
+
+      <div className="product-info">
+        <ProductTitle>{title}</ProductTitle>
+        <p className="product-sub">SOINS CONTOURS YEUX</p>
+        <p className="product-price">
+          <span className="old-price">{oldprice} MAD</span>&nbsp;
+          <span className="new-price">{price} MAD</span>
+        </p>
+      </div>
+    </div>
+     </>
   );
 };
 

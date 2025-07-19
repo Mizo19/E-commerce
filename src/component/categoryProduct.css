@@ -1,0 +1,153 @@
+.product-card {
+  width: 250px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-wrapper {
+  position: relative;
+  text-align: center;
+  background: #fafafa;
+  padding: 15px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #008060;
+  color: white;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.new-badge {
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  background-color: #00c1d4;
+  color: white;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.promo-badge {
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  background-color: #ecb80b;
+  color: black;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.add-to-cart-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  height: 35px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.add-to-cart-btn1 {
+  position: absolute;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 90%;
+  height: 35px;
+  background-color: rgb(41, 138, 3);
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.popup-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  font-size: 16px;
+  animation: slideDownFade 0.3s ease;
+}
+
+@keyframes slideDownFade {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.add-to-cart-btn:hover {
+  background-color: #970404;
+}
+
+.product-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.product-sub {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.product-price {
+  font-size: 14px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.new-price {
+  color: #00a481;
+  font-weight: bold;
+}

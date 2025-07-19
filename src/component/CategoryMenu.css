@@ -32,6 +32,7 @@
   font-size: 1rem;
   color: var(--dropdown-accent);
   border-radius: 6px;
+  font-family: 'Poppins, sans-serif';
   cursor: pointer;
   transition: background-color var(--dropdown-transition), color var(--dropdown-transition);
 }

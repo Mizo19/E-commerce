@@ -14,45 +14,58 @@ const Sidebar = ({ isOpen, toggle, categories, onCategoryClick }) => {
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <button className="close-btn" onClick={toggle}>×</button>
 
-     <ul className="sidebar-links">
-  {/* Main items */}
-  <li className="nav-item main">
-    <Home size={18} />
-    <span className="nav-text">Home</span>
-  </li>
-
-  <li className="nav-item main" onClick={() => setShowCategories(!showCategories)}>
-    <ShoppingCart size={18} />
-    <span className="nav-text">Produits</span>
-  </li>
-
-  {/* Categories */}
-  {showCategories && categories.map((cat) => (
-    <React.Fragment key={cat.id}>
-      <li
-        className="nav-item category"
-        onClick={() => toggleCategory(cat.id)}
-      >
-        <span className="nav-text">{cat.title}</span>
-      </li>
-
-      {expandedCategoryId === cat.id && cat.subcategories?.map((sub) => (
-        <li
-          key={sub.id}
-          className="nav-item subcategory"
-          onClick={() => onCategoryClick(sub.id)}
-        >
-          <span className="nav-text">🛒{sub.title}</span>
+      <ul className="sidebar-links">
+        {/* Home */}
+        <li className="nav-item">
+          <Home size={18} />
+          <span className="nav-text">Home</span>
         </li>
-      ))}
-    </React.Fragment>
-  ))}
 
-  <li className="nav-item main">
-    <Info size={18} />
-    <span className="nav-text">À propos</span>
-  </li>
-</ul>
+        {/* Produits */}
+        <li className="nav-item" onClick={() => setShowCategories(!showCategories)}>
+          <ShoppingCart size={18} />
+          <span className="nav-text">Produits</span>
+        </li>
+
+        {/* Categories */}
+        {showCategories && categories.map((cat) => (
+          <React.Fragment key={cat.id}>
+            <li
+              className="nav-item category"
+              onClick={() => toggleCategory(cat.id)}
+            >
+              <span className="nav-text">{cat.title}</span>
+            </li>
+
+            {/* Subcategories */}
+            {expandedCategoryId === cat.id && cat.subcategories?.map((sub) => (
+              <li
+                key={sub.id}
+                className="nav-item subcategory"
+                onClick={() => onCategoryClick(sub.id)}
+              >
+                <span className="nav-text">{sub.title}</span>
+              </li>
+            ))}
+          </React.Fragment>
+        ))}
+
+        {/* About */}
+        <li className="nav-item">
+          <Info size={18} />
+          <span className="nav-text">À propos</span>
+        </li>
+        {/* About */}
+        <li className="nav-item">
+          <Info size={18} />
+          <span className="nav-text">Promos</span>
+        </li>
+        {/* About */}
+        <li className="nav-item">
+          <Info size={18} />
+          <span className="nav-text">Marque</span>
+        </li>
+      </ul>
     </div>
   );
 };
